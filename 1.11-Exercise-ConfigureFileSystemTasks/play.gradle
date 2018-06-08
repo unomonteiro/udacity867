@@ -1,0 +1,35 @@
+// 1
+task copyWeb(type: Copy) {
+    from ('src/web')
+    from ('src/docs') {
+        include '*.txt'
+        into 'help'
+    }
+    into 'build/web'
+}
+
+// 2
+task bundleWeb(type: Zip, dependsOn: copyWeb) {
+    baseName = 'web'
+    destinationDir = file('build')
+
+    from 'build/web'
+    exclude 'images/**'
+
+}
+
+// 3
+task unpackBundle(type: Copy, dependsOn: bundleWeb) {
+    from zipTree('build/web.zip')
+    into 'build/exploded'
+}
+
+// 4
+task deleteHelp(type: Delete, dependsOn: copyWeb) {
+    delete 'build/web'
+}
+
+// extra delete 
+task deleteBuild(type: Delete) {
+    delete 'build'
+}
