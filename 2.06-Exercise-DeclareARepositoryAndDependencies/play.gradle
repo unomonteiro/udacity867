@@ -1,0 +1,20 @@
+apply plugin: 'java'
+
+repositories {
+    mavenCentral() // 1. add Maven Central repository
+}
+
+dependencies {
+    compile 'commons-io:commons-io:2.5' // 2. group:name:version
+
+    // 3. including all jars from libs directory
+    compile fileTree(dir: 'libs', include: '*.jar')
+}
+
+task printDependencies {
+    doLast {
+        configurations.compile.each {
+            println it.name
+        }
+    }
+}
