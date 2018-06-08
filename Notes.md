@@ -48,4 +48,4 @@ gradle bundleSources --info
 
 - 32 Explore the Build Lifecycle  
 [build lifecycle](https://docs.gradle.org/current/userguide/build_lifecycle.html)  
-![build-lifecycle](/notes/build-lifecyle.png)  
+![build-lifecycle](notes/build-lifecyle.png)  
