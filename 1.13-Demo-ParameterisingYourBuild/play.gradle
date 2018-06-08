@@ -1,0 +1,19 @@
+task printGreeting {
+    doLast {
+        println greeting
+    }
+}
+
+C:\...>gradle -b play.gradle prG
+
+> Task :printGreeting
+"Hello from a properties file"
+
+BUILD SUCCESSFUL in 1s
+1 actionable task: 1 executed
+C:...>gradle -b play.gradle -Pgreeting="commandLine" prG
+
+> Task :printGreeting
+commandLine
+
+// Pgreeting command line greeting has priority
