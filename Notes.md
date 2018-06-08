@@ -29,5 +29,23 @@ gradle bundleSources --info
 [.properties wiki](https://en.wikipedia.org/wiki/.properties)  
 [Build Environment](https://docs.gradle.org/current/userguide/build_environment.html)
 
+
 - 27. Creating Custom Task Types  
 [chapter 58 of the Gradle user guide](https://docs.gradle.org/current/userguide/custom_tasks.html)  
+
+
+- 29. Troubleshooting and Logging  
+`Error` - Error   
+`-q` or `--quiet` - QUIET and higher  
+`-w` or `--warn`- WARN and higher  
+`lifecycle` - default  
+`-i` or `--info` - INFO and higher  
+`-d` or `--debug` - DEBUG and higher (that is, all log messages)  
+</br>Command line optinos:  
+`-s` or `--stacktrace`  
+`-S` or `--full-stacktrace`  
+</br>[Gradle User Guide chapter on logging](https://docs.gradle.org/current/userguide/logging.html)  
+
+- 32 Explore the Build Lifecycle  
+[build lifecycle](https://docs.gradle.org/current/userguide/build_lifecycle.html)  
+![build-lifecycle](/notes/build-lifecyle.png)  
