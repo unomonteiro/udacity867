@@ -1,0 +1,35 @@
+// how to declare a task
+project.task("myTask1")
+task("myTask2")
+task "myTask3"
+task myTask4
+
+myTask4.description = "This is description"
+myTask4.group = "This heading for this task in the task list,"
+
+myTask4.doLast {println "Do this last"}
+
+myTask4.doFirst {println "Do this first"}
+
+task mt6 {
+    description "heres a 6 description"
+    group "some group"
+    doLast {
+        println "here's the action"
+    }
+}
+
+task mt7 {
+    description("description7")
+    //description "description7"
+    group = "Some group"
+    doLast {
+        println "action 7"
+    }
+}
+
+task mt8(description: "Another description8") {
+    doLast {
+        println "Doing 8"
+    }
+}
