@@ -1,0 +1,36 @@
+task stringAndTypes {
+    doLast {
+        println "Nice nice abrev :)"
+
+        def foo = 4.2
+        // TODO: Print the value and class of foo
+        println "foo is of type: ${foo.class}"
+        println "foo value is ${foo}"
+
+        // interpolation
+        println " square root of 127 ${Math.sqrt(127)}"
+
+        foo = new java.util.Date()
+        println "foo is now of type ${foo.class}"
+        println "foo value is ${foo}"
+
+        def hello = "hello, Carlos"
+        def name = hello.substring(7, 13)
+        println name.toUpperCase()
+    }
+}
+
+task closures {
+    doLast {
+        def addTwo = {x, y -> x + y}
+        println "addTwo with 5 and 3 is: ${addTwo(5, 3)}"
+    }
+}
+
+task candies {
+    doLast {
+        def candyList = ["a","b","c","d"]
+        def capitalCandies = candyList.collect{it.toUpperCase()}
+        capitalCandies.each{println it}
+    }
+}
