@@ -17,3 +17,9 @@ No solutions.gradle
 
 - 20. Quiz: Docs Scavenger Hunt
 Could not find only if
+
+- 23. Incremental Builds
+```javascript
+gradle bundleSources --info  
+```
+[Introducing Incremental Build Support](https://blog.gradle.org/introducing-incremental-build-support)  
