@@ -7,8 +7,37 @@ the output to better understand how Gradle evaluates build script logic.
 Exercises:
 
 1. Execute the "help" task and observe the output.
+
+> Configure project :
+First top level script element
+First task: Configuration
+Second task: Configuration
+Second top level script element
+
 2. Execute the "first" task and observe the output.
+
+> Configure project :
+First top level script element
+First task: Configuration
+Second task: Configuration
+Second top level script element
+
+> Task :first
+First task: Action
+
 3. Execute the "second" task and observe the output.
+
+> Configure project :
+First top level script element
+First task: Configuration
+Second task: Configuration
+Second top level script element
+
+> Task :first
+First task: Action
+
+> Task :second
+Second task: Action
 
 */
 
