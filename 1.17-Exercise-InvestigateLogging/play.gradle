@@ -1,0 +1,29 @@
+task hello(type: HelloTask)
+
+// 1.
+/*
+class HelloTask extends DefaultTask {
+    @TaskAction
+    void doAction() {
+        logger.info 'Start HelloTask Action'
+        println 'Hello World'
+        logger.info 'Finished HelloTask Action'
+    }
+}
+*/
+
+// 2.
+// c:\> gradle -b play.gradle hello -i
+
+// 3.
+class HelloTask extends DefaultTask {
+    @TaskAction
+    void doAction() {
+        logger.info 'Start HelloTask Action'
+        logger.lifecycle 'Hello World'
+        logger.info 'Finished HelloTask Action'
+        logger.debug "Catch me if you can" // 7.
+    }
+}
+
+// 7. C:\> findstr "Catch" gradle -b play.gradle hello -d
