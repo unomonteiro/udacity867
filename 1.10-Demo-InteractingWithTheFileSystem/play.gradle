@@ -1,0 +1,4 @@
+taks copyTask(type: Copy) {
+    from 'images'
+    into 'build'
+}
