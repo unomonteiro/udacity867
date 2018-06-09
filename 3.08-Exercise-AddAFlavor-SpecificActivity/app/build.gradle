@@ -36,7 +36,7 @@ android {
         versionCode 1
         versionName "1.0"
     }
-    productFlavors{
+    productFlavors {
         free {
             applicationId "com.udacity.gradle.flavorspecificactivity.free"
         }
@@ -56,4 +56,6 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:24.1.1'
+    compile 'com.android.support.constraint:constraint-layout:1.1.1'
+    compile 'com.android.support:design:24.2.1'
 }
