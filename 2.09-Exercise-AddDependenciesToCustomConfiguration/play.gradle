@@ -1,0 +1,20 @@
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+
+configurations {
+    deps
+    // 2. Make 'compile' extend from 'deps'
+    compile.extendsFrom deps
+}
+
+dependencies {
+    // 3. Add 'guava' dependency
+    deps 'com.google.guava:guava:18.0'
+}
+
+// dependencyArchive-4.2-deps.zip
+
+basename-appendix-version-classifier.extension
