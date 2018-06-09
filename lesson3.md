@@ -21,9 +21,12 @@ Configuration on demand is an incubating feature.
 
 The link is deprecated and repeated on point 10.
 
-### 12. Configuring Build Types
+#### 12. Configuring Build Types
 Quiz and exercise 3.05 don't match  
 Quiz is to disable debug and exercise 3.05 is to configure applicationIdSuffix.
+
+#### 16. Quiz: Add a Flavor Specific Activity
+exercise **3.08** is missing how to move activities from main to free or paid version, a file is ok but an activity cannot be on both free or paid versions and manifest has to be handled correctly. a bit more guidance would be useful
 
 ### general notes
 `apply plugin: 'java'`
@@ -106,4 +109,32 @@ productFlavors {
     paid {
         minSdkVersion 23
     }
-}```
+}
+```
+
+### 16. Quiz: Add a Flavor Specific Activity
+When adding `ActivityMain.Java` to a `flavor` we need to remove from `main`
+
+### 17. Per-Variant Dependency Configurations
+```
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:24.1.1'
+    freeCompile 'com.google.android.gms:play-services-ads:9.4.0'
+}
+```
+
+![per-variant-dependency-compile](notes\per-variant-dependency-compile.png)
+
+### 18. Flavor Dimensions
+- [Combine multiple product flavors with flavor dimensions](https://developer.android.com/studio/build/build-variants#flavor-dimensions)  
+![flavor-dimensions](notes\flavor-dimensions.png)
+
+### 19. Configuring Generated Tasks
+```
+applicationVariants.all {
+    if (buildType.name == 'debug') {
+        javaCompile.options.compilerArgs = ['-verbose']
+    }
+}
+```
