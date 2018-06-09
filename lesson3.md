@@ -90,3 +90,20 @@ To use our solution, uncomment the following line.
 
 // apply from:"solution.gradle"
 ```
+
+### 13. Resource Merging
+![notes\resource-merging.png](notes\resource-merging.png)   
+
+![notes\resource-merging-diagram.png](notes\resource-merging-diagram.png)  
+### 14. Declaring Flavors
+In addition to including addition sources in a flavor variant, we can place
+flavor-specific configuration in our Gradle build file. Any configuration that
+we can put in `defaultConfig { }` script block can also be placed in a flavor
+configuration block. For example, let's say the paid version of our app
+requires a new Android SDK. We can enforce that like so:
+```
+productFlavors {
+    paid {
+        minSdkVersion 23
+    }
+}```
