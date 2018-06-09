@@ -9,11 +9,12 @@ Android Manifest. We'll talk about the `buildTypes` block momentarily.
 
 */
 
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.application' // from jcenter() on root.build.gradle
 
 android {
+    // compileSdkVersion and buildToolsVersion are essential
     compileSdkVersion 25
-    buildToolsVersion "24.0.3"
+    buildToolsVersion "25.0.3"
 
     defaultConfig {
         applicationId "com.example.android.myapplication"
