@@ -8,6 +8,9 @@ it's not clear where to find a relation from assemble and executed classes
 however executing: gradle assemble -i
 we can actually see which tasks are executed or even up-to-date
 
+14\. Declaring Dependencies  
+compile is deprecated
+
 ### notes
 `apply plugin: 'java'`  
 [Using Gradle Plugins](https://docs.gradle.org/current/userguide/plugins.html)  
@@ -43,3 +46,53 @@ Most popular repositories:
 - [Dependency Management for Java Projects
 ](https://docs.gradle.org/current/userguide/dependency_management_for_java_projects.html)  
 - [Full article Dependency Management](https://docs.gradle.org/current/userguide/introduction_dependency_management.html)
+
+### 14. Declaring Dependencies
+now that we configured our  `Repositories` we can define `Dependencies` on `Artifacts` contained in those repositories.
+
+`External module Dependencies`: Dependencies that resolve from repositories
+
+Dependencies are assigned to configurations/ groups of related dependencies
+
+dependencies are added to implementation configuration
+```
+dependencies {
+    compile 'com.google.guava:18.0'
+}
+```
+`'com.google.guava:18.0'` -  dependency notation  
+that we add to  
+`compile` name of the configuration
+
+- [DependencyHandler](https://docs.gradle.org/current/dsl/org.gradle.api.artifacts.dsl.DependencyHandler.html)
+
+### 15. Declare Dependencies
+- [2.06](2.06-Exercise-DeclareARepositoryAndDependencies/build.gradle)  
+```
+task printDependencies {
+    doLast {
+        configurations.compile.each {
+            println it.name
+        }
+    }
+}
+```  
+`$ gradle printDependencies`  
+`$ gradle dependencyInsight --dependency commons-logging`
+
+### 17. Configurations
+[2.08]()
+
+### 18 Quiz: Create a Custom Configuration
+- [Create custom configuration](https://docs.gradle.org/current/dsl/org.gradle.api.artifacts.Configuration.html)
+
+### 20. Java Unit Testing
+- [the java plugin - testing](https://docs.gradle.org/current/userguide/java_plugin.html#sec:java_test)  
+- [tests report: build/reports/tests/test/classes/*.html ](build/reports/tests/test/classes/com.udacity.gradle.test.PersonTest.html)
+
+### 22. Finding Gradle plugins
+- [Gradle user guide Gradle plugins](https://docs.gradle.org/current/userguide/standard_plugins.html)  
+- [Plugin Portal](https://plugins.gradle.org/)  
+
+### 23. Advanced Gradle Wrapper
+- [Gradle Wrapper chapter of the Gradle user guide](https://docs.gradle.org/current/userguide/gradle_wrapper.html)  
