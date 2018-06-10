@@ -37,6 +37,8 @@ dependencies {
     compile project(':javaJokes')
 }
 
+sourceCompatibility = 1.7
+
 /*
 
 Finally, we need to actually use the library. Give the textView in
