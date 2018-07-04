@@ -1,5 +1,6 @@
 # ud867: Gradle for Android and Java
 
+Forked from [udacity/ud867](https://github.com/udacity/ud867)
 Welcome to the demos and exercises accompanying ud867 at Udacity!
 
 Each directory contains a README.md or solution.gradle that will explain either
